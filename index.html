@@ -2,17 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Spring</title>
 </head>
 <body>
     <header class="header">
         <img class="header-logo" src="images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg" alt="Logo spring">
         <nav class="navigation">
-            <ul class="navigations-items">
-                <li class="dropdown-reasons">
-                    <a href="#">Why Spring</a>
-                    <div class="dropdown-reasons__content">
+            <ul class="navigation-items">
+                <li class="dropdown dropdown-reasons">
+                    <div class="dropdown-container">
+                        <a class="main-item" href="#">Why Spring</a>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="dropdown-content dropdown-content__reasons">
                         <a href="#">Overview</a>
                         <a href="#">Microservices</a>
                         <a href="#">Reactive</a>
@@ -23,17 +31,23 @@
                         <a href="#">Batch</a>
                     </div>
                 </li>
-                <li class="dropdown-learn">
-                    <a href="#">Learn</a>
-                    <div class="dropdown-learn__content">
+                <li class="dropdown dropdown-learn">
+                    <div class="dropdown-container">
+                        <a href="#" class="main-item">Learn</a>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="dropdown-content dropdown-content__learn">
                         <a href="#">Quickstart</a>
                         <a href="#">Guides</a>
                         <a href="#">Blog</a>
                     </div>
                 </li>
-                <li class="dropdown-projects">
-                    <a href="#">Projects</a>
-                    <div class="dropdown-projects__content">
+                <li class="dropdown dropdown-projects">
+                    <div class="dropdown-container">
+                        <a class="main-item" href="#">Projects</a>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="dropdown-content dropdown-content__projects">
                         <a href="#">Overview</a>
                         <a href="#">Spring Boot</a>
                         <a href="#">Spring Framework</a>
@@ -50,15 +64,21 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#">Training</a>
+                    <a class="main-item" href="#">Training</a>
                 </li>
                 <li>
-                    <a href="#">Support</a>
+                    <a class="main-item" href="#">Support</a>
                 </li>
-                <li class="dropdown-community">
-                    <a href="#">Overview</a>
-                    <a href="#">Events</a>
-                    <a href="#">Team</a>
+                <li class="dropdown dropdown-community">
+                    <div class="dropdown-container">
+                        <p class="main-item">Community</p>
+                        <div class="arrow"></div>
+                    </div>
+                    <div class="dropdown-content dropdown-content__content">
+                        <a href="#">Overview</a>
+                        <a href="#">Events</a>
+                        <a href="#">Team</a>
+                    </div>
                 </li>
             </ul>
         </nav>
