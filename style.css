@@ -48,7 +48,6 @@ p {
 
 .navigation-items {
     display: flex;
-    flex-direction: row;
     gap: 35px;
 }
 
@@ -67,7 +66,7 @@ p {
     background-color: #f9f9f9;
     min-width: 190px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    padding: 25px 15px;
+    padding: 25px 10px;
     z-index: 1;
     border-radius: 10px;
 }
@@ -83,8 +82,17 @@ p {
     font-weight: 500;
 }
 
+.dropdown-content__projects .active-link {
+    color: #768adb;
+}
+
 .dropdown-content a:hover {
     color: green;
+}
+
+.upper-item {
+    font-size: 13px;
+    padding: 5px 15px;
 }
 
 .arrow {
@@ -193,6 +201,7 @@ p {
 }
 
 .card {
+    position: relative;
     margin-top: 20px;
     padding: 40px 30px;
     gap: 20px;
@@ -200,7 +209,13 @@ p {
     max-width: 400px;
     background-color: #FFFFFF;
     align-items: start;
-    transition: margin-bottom .15s;
+    transition: top;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    top: -10px;
 }
 
 .card-title {
@@ -212,11 +227,6 @@ p {
 .card-subtitle {
     font-size: 16px;
     line-height: 1.5;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    cursor: pointer;
 }
 
 .card-wrapper {
