@@ -183,7 +183,7 @@ p {
 .card-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    justify-content: space-between;
 }
 
 .main-content {
@@ -193,6 +193,7 @@ p {
 }
 
 .card {
+    margin-top: 20px;
     padding: 40px 30px;
     gap: 20px;
     display: flex;
@@ -231,5 +232,37 @@ p {
 
     .hamburger-menu {
         display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-logo {
+        width: 120px;
+        height: 25px;
+    }
+
+    .main-title {
+        font-size: 48px;
+    }
+
+    .main-subtitle {
+        font-size: 20px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-subtitle {
+        font-size: 16px;
+    }
+
+    .card-wrapper {
+        margin: 0 25px;
+    }
+
+    .card {
+        max-width: none;
+        width: 100%;
     }
 }
