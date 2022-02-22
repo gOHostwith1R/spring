@@ -37,11 +37,13 @@ p {
     padding: 10px 30px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header-logo {
     width: 190px;
     height: 48px;
+    cursor: pointer;
 }
 
 .navigation-items {
@@ -62,9 +64,8 @@ p {
 .dropdown-content {
     display: none;
     position: absolute;
-    margin-top: 26px;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 190px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     padding: 25px 15px;
     z-index: 1;
@@ -77,9 +78,13 @@ p {
 }
 
 .dropdown-content a {
-    padding: 10px 15px;
+    padding: 5px 15px;
     color: #191e1e;
     font-weight: 500;
+}
+
+.dropdown-content a:hover {
+    color: green;
 }
 
 .arrow {
@@ -96,6 +101,46 @@ p {
     align-items: center;
     gap: 8px;
 }
+
+.hamburger-menu {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburger-lines,
+.hamburger-lines::before,
+.hamburger-lines::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 3px;
+    background-color: #222;
+}
+.hamburger-lines::before,
+.hamburger-lines::after {
+    content: '';
+    display: block;
+}
+.hamburger-lines::before {
+    transform: translateY(-6px);
+}
+.hamburger-lines::after {
+    transform: translateY(6px);
+}
+
+.hamburger-menu:hover .hamburger-lines,
+.hamburger-menu:hover .hamburger-lines::before,
+.hamburger-menu:hover .hamburger-lines::after {
+    background-color: green;
+    transition: background .3s;
+}
+
 
 /* main */
 /* 1) main for description */
@@ -176,4 +221,15 @@ p {
 .card-wrapper {
     max-width: 950px;
     margin: 0 auto 40px ;
+}
+
+/* media queries */
+@media (max-width: 900px) {
+    .navigation {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
 }
