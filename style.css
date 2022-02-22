@@ -1,8 +1,11 @@
 /* global */
-
+* {
+    box-sizing: border-box;
+}
 body {
     font-size: 15px;
     width: 100%;
+    margin: 0 auto;
     height: 100%;
 }
 
@@ -24,10 +27,16 @@ p {
 /* header */
 
 .header {
+    width: 100%;
+    border-bottom: 1px solid #ddebe8;
+}
+
+.header-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 10px 0;
     display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid #ddebe8;
+    justify-content: space-between;
 }
 
 .header-logo {
@@ -89,9 +98,64 @@ p {
 }
 
 /* main */
-/* 1) for cards */
+/* 1) main for description */
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main-title {
+    font-family: 'Metropolis', sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: #191e1e;
+}
+
+.main-subtitle {
+    font-family: 'Metropolis', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333333;
+}
+
+.main-description {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 2) main for cards */
 .card-image {
     height: 60px;
     width: 70px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.main-content {
+    width: 100%;
+    background-color: #ebf2f2;
+    padding-top: 40px;
+}
+
+.card {
+    padding: 40px 30px;
+    gap: 20px;
+    display: flex;
+    max-width: 450px;
+    background-color: #FFFFFF;
+    align-items: start;
+    transition: margin-bottom .15s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    margin-bottom: 5px;
+    cursor: pointer;
 }
