@@ -1,0 +1,278 @@
+/* global */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 15px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+p {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* header */
+
+.header {
+    width: 100%;
+    border-bottom: 1px solid #ddebe8;
+}
+
+.header-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    width: 190px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.navigation-items {
+    display: flex;
+    gap: 35px;
+}
+
+.main-item {
+    font-weight: 900;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 190px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    padding: 25px 10px;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    padding: 5px 15px;
+    color: #191e1e;
+    font-weight: 500;
+}
+
+.dropdown-content__projects .active-link {
+    color: #768adb;
+}
+
+.dropdown-content a:hover {
+    color: green;
+}
+
+.upper-item {
+    font-size: 13px;
+    padding: 5px 15px;
+}
+
+.arrow {
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+    transform: rotate(135deg);
+    margin-bottom: 4px;
+}
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hamburger-menu {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburger-lines,
+.hamburger-lines::before,
+.hamburger-lines::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 3px;
+    background-color: #222;
+}
+.hamburger-lines::before,
+.hamburger-lines::after {
+    content: '';
+    display: block;
+}
+.hamburger-lines::before {
+    transform: translateY(-6px);
+}
+.hamburger-lines::after {
+    transform: translateY(6px);
+}
+
+.hamburger-menu:hover .hamburger-lines,
+.hamburger-menu:hover .hamburger-lines::before,
+.hamburger-menu:hover .hamburger-lines::after {
+    background-color: green;
+    transition: background .3s;
+}
+
+
+/* main */
+/* 1) main for description */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main-title {
+    font-family: 'Metropolis', sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: #191e1e;
+}
+
+.main-subtitle {
+    display: inline-block;
+    font-family: 'Metropolis', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333333;
+    margin: 0 20px 50px 0;
+}
+
+.main-description {
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+
+
+/* 2) main for cards */
+.card-image {
+    height: 60px;
+    width: 70px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-content {
+    width: 100%;
+    background-color: #ebf2f2;
+    padding-top: 40px;
+}
+
+.card {
+    position: relative;
+    margin-top: 20px;
+    padding: 40px 30px;
+    gap: 20px;
+    display: flex;
+    max-width: 400px;
+    background-color: #FFFFFF;
+    align-items: start;
+    transition: top;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    top: -10px;
+}
+
+.card-title {
+    font-family: 'Metropolis', sans-serif;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.card-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.card-wrapper {
+    max-width: 950px;
+    margin: 0 auto 40px ;
+}
+
+/* media queries */
+@media (max-width: 900px) {
+    .navigation {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-logo {
+        width: 120px;
+        height: 25px;
+    }
+
+    .main-title {
+        font-size: 48px;
+    }
+
+    .main-subtitle {
+        font-size: 20px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-subtitle {
+        font-size: 16px;
+    }
+
+    .card-wrapper {
+        margin: 0 25px;
+    }
+
+    .card {
+        max-width: none;
+        width: 100%;
+    }
+}
