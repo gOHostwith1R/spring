@@ -34,7 +34,7 @@ p {
 .header-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 10px 30px;
     display: flex;
     justify-content: space-between;
 }
@@ -114,14 +114,17 @@ p {
 }
 
 .main-subtitle {
+    display: inline-block;
     font-family: 'Metropolis', sans-serif;
     font-size: 24px;
     font-weight: 500;
     color: #333333;
+    margin: 0 20px 50px 0;
 }
 
 .main-description {
     max-width: 1200px;
+    padding: 0 30px;
     margin: 0 auto;
 }
 
@@ -148,14 +151,29 @@ p {
     padding: 40px 30px;
     gap: 20px;
     display: flex;
-    max-width: 450px;
+    max-width: 400px;
     background-color: #FFFFFF;
     align-items: start;
     transition: margin-bottom .15s;
 }
 
+.card-title {
+    font-family: 'Metropolis', sans-serif;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.card-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    margin-bottom: 5px;
     cursor: pointer;
+}
+
+.card-wrapper {
+    max-width: 950px;
+    margin: 0 auto 40px ;
 }
