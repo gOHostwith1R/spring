@@ -1,12 +1,18 @@
-import { drawCards, drawNavigation } from "./core";
+import { drawCards, drawNavigation, drawDropdownContent } from "./core";
 
 const cardWrapperNode = document.querySelector('.card-wrapper');
-const navigationWrapper = document.querySelectorAll('.dropdown-container');
+const navigationWrappers = document.querySelectorAll('.dropdown-container');
+const dropdownWrappers = document.querySelectorAll('.dropdown-content');
 
 const markupCards = drawCards();
 cardWrapperNode.innerHTML = markupCards;
 
 const markupNavigation = drawNavigation();
-navigationWrapper.forEach((elem, index) => {
+navigationWrappers.forEach((elem, index) => {
     elem.innerHTML = markupNavigation[index];
-})
+});
+
+const markupDropdown = drawDropdownContent();
+dropdownWrappers.forEach((elem, index) => {
+    elem.innerHTML = markupDropdown[index];
+});
