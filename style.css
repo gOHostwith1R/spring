@@ -150,6 +150,51 @@ p {
     transition: background .3s;
 }
 
+.wrapper-hamburger__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #191e1e;
+    z-index: 999;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    height: 0;
+}
+
+.hamburger__visibility {
+    height: 100%;
+    width: 100%;
+}
+
+.hamburger__menu-close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 26px;
+    height: 26px;
+    opacity: 0.7;
+}
+
+.hamburger__menu-close:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.hamburger__menu-close:before,
+.hamburger__menu-close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 26px;
+    width: 2px;
+    background-color: #fafcfb;
+}
+.hamburger__menu-close:before {
+    transform: rotate(45deg);
+}
+.hamburger__menu-close:after {
+    transform: rotate(-45deg);
+}
 
 /* main */
 /* 1) main for description */
