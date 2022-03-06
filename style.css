@@ -282,6 +282,26 @@ p {
     margin: 0 auto;
 }
 
+.input__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search__card {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.search__card::placeholder {
+    font-size: 18px;
+    color: #98afae;
+}
+
+.search__card:focus {
+    outline: none;
+}
 
 /* 2) main for cards */
 .card-image {
@@ -298,7 +318,6 @@ p {
 .main-content {
     width: 100%;
     background-color: #ebf2f2;
-    padding-top: 40px;
 }
 
 .card {
