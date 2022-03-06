@@ -7,7 +7,7 @@ import {
     openBurgerMenu,
     openCloseHamburgerDropdown,
     filterCards,
-} from "./core";
+} from "./src/core";
 
 const cardWrapperNode = document.querySelector('.card-wrapper');
 const navigationWrappers = document.querySelectorAll('.dropdown-container');
