@@ -1,10 +1,12 @@
-import { drawCards,
-    drawNavigation,
-    drawDropdownContent,
-    openBurgerMenu,
-    drawNavigationBurger,
-    openCloseHamburgerDropdown,
+import {
+    drawCards,
     drawDropdownBurger,
+    drawDropdownContent,
+    drawNavigation,
+    drawNavigationBurger,
+    openBurgerMenu,
+    openCloseHamburgerDropdown,
+    filterCards,
 } from "./core";
 
 const cardWrapperNode = document.querySelector('.card-wrapper');
@@ -16,9 +18,7 @@ const closeBurger = document.querySelector('.hamburger__menu-close');
 const navigationHamburgerMenu = document.querySelectorAll('.wrapper-hamburger__item');
 const containerHamburgerDropdown = document.querySelectorAll('.container-dropdown');
 const dropdownHamburger = document.querySelectorAll('.wrapper-hamburger__dropdown');
-
-const markupCards = drawCards();
-cardWrapperNode.innerHTML = markupCards;
+const searchCardInput = document.querySelector('.search__card');
 
 const markupNavigation = drawNavigation();
 navigationWrappers.forEach((elem, index) => {
@@ -45,4 +45,9 @@ containerHamburgerDropdown.forEach(
 const markupHamburgerDropdown = drawDropdownBurger();
 dropdownHamburger.forEach((elem,index) => {
     elem.innerHTML = markupHamburgerDropdown[index];
+});
+const markupCards = drawCards();
+cardWrapperNode.innerHTML = markupCards;
+searchCardInput.addEventListener('input', (event) => {
+    setTimeout(() => cardWrapperNode.innerHTML = filterCards(event), 300);
 })

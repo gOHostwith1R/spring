@@ -1,8 +1,8 @@
 import { cardsData } from "../../mock";
 
-export const drawCards = () => {
+export const drawCards = (cards = cardsData) => {
     let markupCards = [];
-    cardsData.forEach((elem) => {
+    cards.forEach((elem) => {
         markupCards.push(`
         <section class="card">
             <img class="card-image" src=${elem.avatar} alt=${elem.altCard} />
