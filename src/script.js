@@ -3,7 +3,8 @@ import { drawCards,
     drawDropdownContent,
     openBurgerMenu,
     drawNavigationBurger,
-    openCloseHamburgerDropdown
+    openCloseHamburgerDropdown,
+    drawDropdownBurger,
 } from "./core";
 
 const cardWrapperNode = document.querySelector('.card-wrapper');
@@ -14,6 +15,7 @@ const wrapperHamburgerMenu = document.querySelector('.wrapper-hamburger__menu');
 const closeBurger = document.querySelector('.hamburger__menu-close');
 const navigationHamburgerMenu = document.querySelectorAll('.wrapper-hamburger__item');
 const containerHamburgerDropdown = document.querySelectorAll('.container-dropdown');
+const dropdownHamburger = document.querySelectorAll('.wrapper-hamburger__dropdown');
 
 const markupCards = drawCards();
 cardWrapperNode.innerHTML = markupCards;
@@ -38,4 +40,9 @@ navigationHamburgerMenu.forEach((elem, index) => {
 
 containerHamburgerDropdown.forEach(
     elem => elem.addEventListener('click' ,
-    () => openCloseHamburgerDropdown(elem)))
+    () => openCloseHamburgerDropdown(elem)));
+
+const markupHamburgerDropdown = drawDropdownBurger();
+dropdownHamburger.forEach((elem,index) => {
+    elem.innerHTML = markupHamburgerDropdown[index];
+})
