@@ -1,4 +1,4 @@
-import { cardsData } from "../../mock";
+import { cardsData } from "../../mock/mockCards.js";
 
 export const drawCards = (cards = cardsData) => {
     let markupCards = [];

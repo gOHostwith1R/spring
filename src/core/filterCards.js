@@ -1,5 +1,5 @@
-import { cardsData } from "../../mock";
 import { drawCards } from "./drawCards.js";
+import {cardsData} from "../../mock/mockCards.js";
 
 export const filterCards = (event) => {
     const filterCardsData = cardsData.filter((elem) => elem.title.toLowerCase().includes(event?.target.value.toLowerCase()));

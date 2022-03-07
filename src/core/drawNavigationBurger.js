@@ -1,4 +1,4 @@
-import { navigationData } from "../../mock";
+import {navigationData} from "../../mock/mockNavigation.js";
 
 export const drawNavigationBurger = () => {
     let markupNavigationBurger = '';
