@@ -1,6 +1,5 @@
-import {dropdownContentData} from "../../mock";
+import {dropdownContentData} from "../../mock/mockDropdownContent.js";
 
-export { dropdownContentData } from '../../mock';
 
 export const drawDropdownBurger = () => {
     let markupDropdown = '';

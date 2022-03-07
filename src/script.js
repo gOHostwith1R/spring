@@ -1,13 +1,11 @@
-import {
-    drawCards,
-    drawDropdownBurger,
-    drawDropdownContent,
-    drawNavigation,
-    drawNavigationBurger,
-    openBurgerMenu,
-    openCloseHamburgerDropdown,
-    filterCards,
-} from "/src/core";
+import {drawNavigation} from "./core/drawNavigation.js";
+import {drawDropdownContent} from "./core/drawDropdownContent.js";
+import {openBurgerMenu} from "./core/openBurgerMenu.js";
+import {drawNavigationBurger} from "./core/drawNavigationBurger.js";
+import {openCloseHamburgerDropdown} from "./core/openCloseHamburgerDropdown.js";
+import {drawDropdownBurger} from "./core/drawDropdownBurger.js";
+import {drawCards} from "./core/drawCards.js";
+import {filterCards} from "./core/filterCards.js";
 
 const cardWrapperNode = document.querySelector('.card-wrapper');
 const navigationWrappers = document.querySelectorAll('.dropdown-container');
