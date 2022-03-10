@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
+import { Header } from '../../layouts';
 
 export const App = () => (
   <div className="app">
-    <h1>G</h1>
+    <Header />
   </div>
 );
