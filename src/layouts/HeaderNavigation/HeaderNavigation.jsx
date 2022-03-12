@@ -1,7 +1,7 @@
 import React from 'react';
 import './headerNavigation.css';
 import { navigationData } from '../../consts';
-import { DropdownContent, NavItem } from '../../components';
+import { Burger, DropdownContent, NavItem } from '../../components';
 
 export const HeaderNavigation = () => (
   <nav className="header-navigation">
@@ -15,5 +15,6 @@ export const HeaderNavigation = () => (
         {elem.content && <DropdownContent arrayOfLinks={elem.items} />}
       </div>
     ))}
+    <Burger />
   </nav>
 );

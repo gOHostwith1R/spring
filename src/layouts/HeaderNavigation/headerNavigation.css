@@ -6,3 +6,9 @@
 .dropdown-wrapper {
     position: relative;
 }
+
+@media (max-width: 900px) {
+    .dropdown-wrapper {
+        display: none;
+    }
+}

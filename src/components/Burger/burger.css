@@ -1,0 +1,44 @@
+.burger-menu {
+    display: none;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger-lines,
+.burger-lines::before,
+.burger-lines::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -10px;
+    width: 20px;
+    height: 3px;
+    background-color: #222;
+}
+.burger-lines::before,
+.burger-lines::after {
+    content: '';
+    display: block;
+}
+.burger-lines::before {
+    transform: translateY(-6px);
+}
+.burger-lines::after {
+    transform: translateY(6px);
+}
+
+.burger-menu:hover .burger-lines,
+.burger-menu:hover .burger-lines::before,
+.burger-menu:hover .burger-lines::after {
+    background-color: green;
+    transition: background .3s;
+}
+
+@media (max-width: 900px) {
+    .burger-menu {
+        display: block;
+    }
+}
