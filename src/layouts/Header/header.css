@@ -17,3 +17,10 @@
     height: 48px;
     cursor: pointer;
 }
+
+@media (max-width: 800px) {
+    .logo {
+        width: 120px;
+        height: 25px;
+    }
+}
