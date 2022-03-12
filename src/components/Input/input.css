@@ -1,0 +1,22 @@
+.input__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search__card {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #748075;
+}
+
+.search__card::placeholder {
+    font-size: 18px;
+    color: #98afae;
+}
+
+.search__card:focus {
+    outline: none;
+}
