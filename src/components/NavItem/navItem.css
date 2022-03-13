@@ -1,0 +1,19 @@
+.arrow {
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+    transform: rotate(135deg);
+    margin-bottom: 4px;
+}
+
+.header__links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 48px;
+}
+
+.link {
+    font-weight: 900;
+}
