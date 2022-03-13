@@ -9,10 +9,12 @@ export const App = () => {
   const handleOpenBurger = () => {
     setOpenBurger(!openBurger);
   };
+
   const handleOpenBurgerDropdown = (id) => {
     setOpenBurgerDropdown(!openBurgerDropdown);
     setIdOpenedBurgerDropdown(id);
   };
+
   return (
     <>
       <Header handleOpenBurger={handleOpenBurger} />
