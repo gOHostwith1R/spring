@@ -1,8 +1,7 @@
 import React from 'react';
-import './cards.css';
 import { Card } from '../../components';
-
 import { cardsData } from '../../consts';
+import './cards.css';
 
 export const Cards = () => (
   <div className="cards__wrapper">

@@ -3,7 +3,7 @@ import './headerNavigation.css';
 import { navigationData } from '../../consts';
 import { Burger, DropdownContent, NavItem } from '../../components';
 
-export const HeaderNavigation = () => (
+export const HeaderNavigation = ({ handleOpenBurger }) => (
   <nav className="header-navigation">
     {navigationData.map((elem) => (
       <div className="dropdown-wrapper" key={elem.id}>
@@ -15,6 +15,6 @@ export const HeaderNavigation = () => (
         {elem.content && <DropdownContent arrayOfLinks={elem.items} />}
       </div>
     ))}
-    <Burger />
+    <Burger handleOpenBurger={handleOpenBurger} />
   </nav>
 );
