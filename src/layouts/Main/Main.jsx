@@ -6,12 +6,19 @@ import { Cards } from '../Cards';
 import { BurgerLayout } from '../BurgerLayuot';
 
 export const Main = ({
-  openBurger, handleOpenBurger, handleOpenBurgerDropdown,
-  openBurgerDropdown, idOpenedBurgerDropdown,
+  openBurger, handleOpenBurger,
 }) => {
   const [term, setTerm] = useState('');
+  const [idOpenedBurgerDropdown, setIdOpenedBurgerDropdown] = useState(-1);
+  const [openBurgerDropdown, setOpenBurgerDropdown] = useState(false);
+
   const handleChangeInput = (e) => {
     setTimeout(() => setTerm(e.target.value), 300);
+  };
+
+  const handleOpenBurgerDropdown = (id) => {
+    setOpenBurgerDropdown(!openBurgerDropdown);
+    setIdOpenedBurgerDropdown(id);
   };
   return (
     <main>
