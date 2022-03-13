@@ -1,0 +1,29 @@
+.burger__dropdown {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-in-out;
+}
+
+.burger__dropdown-link {
+    font-size: 21px;
+    color: #98afae;
+    margin: 10px 0;
+    width: fit-content;
+    display: inline-block;
+}
+
+.burger__dropdown_open {
+    max-height: 650px;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.burger__dropdown-link:hover {
+    color: green;
+}
+
+.upper-item__burger {
+    color: #fafcfb;
+    margin: 20px 0 15px;
+}

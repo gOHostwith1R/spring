@@ -5,3 +5,5 @@ export { Paragraph } from './Paragraph';
 export { Title } from './Title';
 export { Input } from './Input';
 export { Card } from './Card';
+export { BurgerNavigation } from './BurgerNavigation';
+export { BurgerDropdown } from './BurgerDropdown';
