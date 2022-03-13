@@ -4,3 +4,19 @@
     font-size: 60px;
     color: #191e1e;
 }
+
+.card__title {
+    font-family: 'Metropolis', sans-serif;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+@media (max-width: 800px) {
+    .main__title {
+        font-size: 48px;
+    }
+
+    .card__title {
+        font-size: 20px;
+    }
+}
