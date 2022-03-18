@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import './app.css';
-import { Header, Main } from '../layouts';
+import { Header, Main } from '../../layouts';
 
-export const App = () => {
+export const MainPage = () => {
   const [openBurger, setOpenBurger] = useState(false);
   const handleOpenBurger = () => {
     setOpenBurger(!openBurger);
