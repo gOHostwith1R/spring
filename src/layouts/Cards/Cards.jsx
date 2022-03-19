@@ -1,10 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Card } from '../../components';
-import { cardsData } from '../../constants';
 import './cards.css';
 
 export const Cards = ({ term }) => {
-  const filterCards = cardsData
+  const cards = useSelector((state) => state.cards.cards);
+  const filterCards = cards
     .filter((elem) => elem.title.toLowerCase().includes(term.toLowerCase()));
   return (
     <div className="cards__wrapper">

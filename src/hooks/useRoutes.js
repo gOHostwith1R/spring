@@ -5,7 +5,7 @@ import { LoginPage, MainPage } from '../pages';
 import { RequireAuth, WithoutAuth } from '../hoc';
 
 export const useRoutes = () => {
-  const isAuth = useSelector((state) => state.isAuth);
+  const isAuth = useSelector((state) => state.login.isAuth);
   return (
     <Routes>
       <Route
