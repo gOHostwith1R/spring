@@ -4,6 +4,7 @@ import { MainDescription } from '../MainDescription';
 import { Input } from '../../components';
 import { Cards } from '../Cards';
 import { BurgerLayout } from '../BurgerLayuot';
+import { InputWrapper } from '../InputWrapper';
 
 export const Main = ({
   openBurger, handleOpenBurger,
@@ -31,7 +32,9 @@ export const Main = ({
       />
       <MainDescription />
       <div className="main__content">
-        <Input handleChangeInput={handleChangeInput} />
+        <InputWrapper>
+          <Input handleChangeInput={handleChangeInput} placeholder="Enter the card title" />
+        </InputWrapper>
         <Cards term={term} />
       </div>
     </main>

@@ -1,0 +1,18 @@
+.login__wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.login__layout {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 440px;
+    height: 260px;
+    border-radius: 10px;
+    background-color: #d1dbeb;
+}

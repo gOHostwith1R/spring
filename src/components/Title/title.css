@@ -11,6 +11,12 @@
     margin-top: 0;
 }
 
+.login__title {
+    font-family: 'Metropolis', sans-serif;
+    margin: 0;
+    color: #323538;
+}
+
 @media (max-width: 800px) {
     .main__title {
         font-size: 48px;
