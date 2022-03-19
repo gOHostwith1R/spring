@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '../../components';
-import { cardsData } from '../../consts';
+import { cardsData } from '../../constants';
 import './cards.css';
 
 export const Cards = ({ term }) => {

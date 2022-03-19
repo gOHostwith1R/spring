@@ -1,6 +1,6 @@
 import React from 'react';
 import './headerNavigation.css';
-import { navigationData } from '../../consts';
+import { navigationData } from '../../constants';
 import { Burger, DropdownContent, NavItem } from '../../components';
 
 export const HeaderNavigation = ({ handleOpenBurger }) => (

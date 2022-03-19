@@ -1,7 +1,7 @@
 import React from 'react';
 import './burgerLayout.css';
 import classNames from 'classnames';
-import { navigationData } from '../../consts';
+import { navigationData } from '../../constants';
 import { BurgerItems } from '../BurgerItems';
 
 export const BurgerLayout = ({
