@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card } from '../../components';
 import './cards.css';
-import { apiCards } from '../../redux/api/apiCards';
+import { fetchCards } from '../../redux/actions';
 
 export const Cards = ({ term }) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(apiCards);
+    dispatch(fetchCards());
   }, [dispatch]);
   const cards = useSelector((state) => state.cards.cards);
   const filterCards = cards
