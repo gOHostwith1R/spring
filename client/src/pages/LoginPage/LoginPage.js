@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './loginPage.css';
 import { useDispatch } from 'react-redux';
 import { Button, Input, Paragraph } from '../../components';
-import { handleLogin } from '../../redux/actions';
+import { authAction } from '../../redux/actions';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ export const LoginPage = () => {
   };
 
   const onClick = () => (
-    inputsData.password === '1234' && inputsData.userName === 'admin' ? dispatch(handleLogin()) : setError(true)
+    inputsData.password === '1234' && inputsData.userName === 'admin' ? dispatch(authAction()) : setError(true)
   );
   return (
     <div className="login__wrapper">
