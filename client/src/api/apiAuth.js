@@ -1,7 +1,5 @@
-import { authAction } from '../redux/actions';
+import axios from 'axios';
 
-export const apiAuth = () => (dispatch) => {
-  fetch('http://localhost:5000/api/user/login')
-    .then((response) => response.json())
-    .then((json) => dispatch(authAction(json)));
+export const apiAuth = {
+  apiAuthLogin: (userName, password) => axios.post('http://localhost:5000/api/user/login', { userName, password }),
 };

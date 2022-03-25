@@ -1,2 +1,2 @@
-export { authAction } from './authAction';
+export { authLogin } from './authAction';
 export { fetchCards } from './cardsAction';
