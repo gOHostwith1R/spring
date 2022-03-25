@@ -1,4 +1,4 @@
- const cardsData = [
+const cardsData = [
   {
     id: 0,
     title: 'Spring Boot',
