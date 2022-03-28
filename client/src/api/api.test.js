@@ -51,6 +51,6 @@ describe('Test Login', () => {
         { },
         mockServiceCreator({ }, false),
       ))
-      .catch(() => expect(store.getActions()).toContainEqual({ type: 'SET_ERROR' }));
+      .then(() => expect(store.getActions()).toContainEqual({ type: 'SET_ERROR' }));
   });
 });
