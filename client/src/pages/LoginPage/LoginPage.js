@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import './loginPage.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button, Input, Paragraph } from '../../components';
 import { authLogin } from '../../redux/actions';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
+  const error = useSelector((state) => state.login.error);
   const [inputsData, setInputsData] = useState({ userName: '', password: '' });
-  const [error, setError] = useState(false);
   const changeInputs = (e) => {
     setInputsData({ ...inputsData, [e.target.name]: e.target.value });
   };
 
   const onClick = () => (
-    inputsData.password === '1234' && inputsData.userName === 'admin' ? dispatch(authLogin(inputsData.userName, inputsData.password)) : setError(true)
+    dispatch(authLogin(inputsData.userName, inputsData.password))
   );
   return (
     <div className="login__wrapper">

@@ -4,7 +4,15 @@ export const typeAuth = ({
   type: 'LOGIN',
 });
 
+export const typeErrorAuth = ({
+  type: 'SET_ERROR',
+});
+
 export const authLogin = (userName, password) => async (dispatch) => {
-  await apiAuth.apiAuthLogin(userName, password)
-    .then(() => dispatch(typeAuth));
+  try {
+    await apiAuth.apiAuthLogin(userName, password);
+    dispatch(typeAuth);
+  } catch (e) {
+    dispatch(typeErrorAuth);
+  }
 };
