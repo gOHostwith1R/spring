@@ -1,5 +1,5 @@
 {
    "hooks" : {
-        "pre-commit" : "npm --prefix client test"
+        "pre-push" : "npm --prefix client test"
    }
 }
