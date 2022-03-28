@@ -1,5 +1,0 @@
-{
-   "hooks" : {
-        "pre-push" : "npm --prefix client test"
-   }
-}
