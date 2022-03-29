@@ -8,7 +8,7 @@ export const cardsReducer = (state = initialState, action) => {
     case 'FETCH_CARDS':
       return { ...state, cards: [...state.cards, ...action.payload] };
     case 'SET_LOADING': {
-      return { ...state, loading: !initialState.loading };
+      return { ...state, loading: !state.loading };
     }
     default:
       return state;
