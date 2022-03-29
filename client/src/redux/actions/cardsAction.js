@@ -7,8 +7,16 @@ const typeFetchCards = (payload) => ({
   payload,
 });
 
+export const typeSetLoading = ({
+  type: 'SET_LOADING',
+});
+
 export const fetchCards = () => async (dispatch) => {
+  dispatch(typeSetLoading);
   await apiCards
     .apiFetchCards()
-    .then((res) => dispatch(typeFetchCards(res.data)));
+    .then((res) => {
+      dispatch(typeSetLoading);
+      dispatch(typeFetchCards(res.data));
+    });
 };

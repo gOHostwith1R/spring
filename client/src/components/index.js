@@ -8,3 +8,4 @@ export { Card } from './Card';
 export { BurgerNavigation } from './BurgerNavigation';
 export { BurgerDropdown } from './BurgerDropdown';
 export { Button } from './Button';
+export { Loader } from './Loader';

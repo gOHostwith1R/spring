@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Card } from '../../components';
+import { Card, Loader } from '../../components';
 import './cards.css';
 import { fetchCards } from '../../redux/actions';
 
@@ -9,12 +9,14 @@ export const Cards = ({ term }) => {
   useEffect(() => {
     dispatch(fetchCards());
   }, [dispatch]);
+  const loading = useSelector((state) => state.cards.loading);
+  console.log(loading);
   const cards = useSelector((state) => state.cards.cards);
   const filterCards = cards
     .filter((elem) => elem.title.toLowerCase().includes(term.toLowerCase()));
   return (
     <div className="cards__wrapper">
-      {filterCards.map((elem) => (
+      {loading ? <Loader /> : filterCards.map((elem) => (
         <Card
           key={elem.id}
           image={elem.avatar}
@@ -23,7 +25,6 @@ export const Cards = ({ term }) => {
           subtitle={elem.subtitle}
         />
       ))}
-      {filterCards.length === 0 && <p className="not-found">No results</p>}
     </div>
   );
 };
