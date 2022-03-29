@@ -10,7 +10,6 @@ export const Cards = ({ term }) => {
     dispatch(fetchCards());
   }, [dispatch]);
   const loading = useSelector((state) => state.cards.loading);
-  console.log(loading);
   const cards = useSelector((state) => state.cards.cards);
   const filterCards = cards
     .filter((elem) => elem.title.toLowerCase().includes(term.toLowerCase()));
