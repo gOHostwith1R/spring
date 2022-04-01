@@ -1,28 +1,52 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './loginPage.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Input, Paragraph } from '../../components';
+import { Controller, useForm } from 'react-hook-form';
+import {
+  Button, CustomLink, Input, Paragraph, Title,
+} from '../../components';
+import { AuthWrapper } from '../../layouts';
+import { AuthForm } from '../../layouts/AuthForm';
 import { authLogin } from '../../redux/actions';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
+  const { control, handleSubmit } = useForm();
   const error = useSelector((state) => state.login.error);
-  const [inputsData, setInputsData] = useState({ userName: '', password: '' });
-  const changeInputs = (e) => {
-    setInputsData({ ...inputsData, [e.target.name]: e.target.value });
-  };
 
-  const onClick = () => (
-    dispatch(authLogin(inputsData.userName, inputsData.password))
-  );
+  const onSubmit = (data) => dispatch(authLogin(data));
+
   return (
-    <div className="login__wrapper">
-      <div className="login__layout">
-        <Input placeholder="Enter the username" handleChangeInput={changeInputs} name="userName" />
-        <Input placeholder="Enter the password" type="password" handleChangeInput={changeInputs} name="password" />
-        <Button type="submit" classType="button__login" onClick={onClick}>Login</Button>
+    <AuthWrapper>
+      <AuthForm onSubmit={handleSubmit(onSubmit)}>
+        <Title type="login__title">Login</Title>
+        <Controller
+          name="userName"
+          control={control}
+          render={({ field: { ref, onChange } }) => (
+            <Input
+              inputRef={ref}
+              onChange={onChange}
+              placeholder="Enter the user name"
+            />
+          )}
+        />
+        <Controller
+          name="password"
+          control={control}
+          render={({ field: { ref, onChange } }) => (
+            <Input
+              inputRef={ref}
+              onChange={onChange}
+              placeholder="Enter the password"
+              type="password"
+            />
+          )}
+        />
+        <Button type="submit" classType="button__login">Login</Button>
+        <CustomLink path="/signup">Sign Up</CustomLink>
         {error && <Paragraph type="error">Incorrect data</Paragraph> }
-      </div>
-    </div>
+      </AuthForm>
+    </AuthWrapper>
   );
 };

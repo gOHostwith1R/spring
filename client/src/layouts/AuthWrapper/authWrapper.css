@@ -1,18 +1,8 @@
-.login__wrapper {
+.auth__wrapper {
     height: 100vh;
     background: rgb(73,47,214);
     background: linear-gradient(90deg, rgba(73,47,214,1) 22%, rgba(109,90,221,1) 47%);
     display: flex;
     align-items: center;
     justify-content: right;
-}
-
-.login__layout {
-    height: 100%;
-    background-color: #e4e9f0;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 60px;
 }

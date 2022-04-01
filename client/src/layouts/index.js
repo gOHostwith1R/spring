@@ -6,3 +6,4 @@ export { Cards } from './Cards';
 export { BurgerLayout } from './BurgerLayuot';
 export { BurgerItems } from './BurgerItems';
 export { InputWrapper } from './InputWrapper';
+export { AuthWrapper } from './AuthWrapper';

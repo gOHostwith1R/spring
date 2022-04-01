@@ -1,0 +1,9 @@
+.form__auth {
+    height: 100%;
+    background-color: #e4e9f0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 80px;
+}
