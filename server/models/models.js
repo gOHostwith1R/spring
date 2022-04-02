@@ -18,7 +18,16 @@ const Card = sequelize.define('card', {
   altCards: { type: DataTypes.STRING },
 });
 
+const Token = sequelize.define('token', {
+  userId: {type: DataTypes.INTEGER },
+  refreshToken: {type: DataTypes.STRING, required: true}
+})
+
+User.hasOne(Token);
+Token.belongsTo(User);
+
 module.exports = {
   User,
   Card,
+  Token,
 };

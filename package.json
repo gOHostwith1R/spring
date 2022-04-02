@@ -4,8 +4,10 @@
   "description": "React",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "server": "npm run dev --prefix server",
+    "client": "npm run start --prefix client",
+    "prepare": "husky install",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -38,5 +40,8 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.1"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
   }
 }

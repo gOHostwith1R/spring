@@ -1,2 +1,2 @@
-export { loginReducer } from './loginReducer';
+export { authReducer } from './authReducer';
 export { cardsReducer } from './cardsReducer';
