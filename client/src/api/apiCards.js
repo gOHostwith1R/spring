@@ -1,9 +1,5 @@
-import axios from 'axios';
+import api from './axiosConfig';
 
 export const apiCards = {
-  apiFetchCards: () => axios.get('http://localhost:5000/api/cards', {
-    headers: {
-      Authorization: `Beaver ${localStorage.getItem('access')}`,
-    },
-  }),
+  apiFetchCards: () => api.get('cards'),
 };

@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import { api } from './axiosConfig';
 
 export const apiAuth = {
   apiAuthLogin: (userName, password) => axios.post('http://localhost:5000/api/user/login', { userName, password }),
