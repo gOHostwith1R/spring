@@ -9,7 +9,7 @@ class ApiError extends Error{
     return new ApiError(409, message)
   }
 
-  static passwordsDontMatch(message) {
+  static unauthorizedError (message) {
     return new ApiError(401, message)
   }
 

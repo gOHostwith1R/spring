@@ -1,5 +1,5 @@
 const initialState = {
-  isAuth: false,
+  isAuth: localStorage.getItem('access'),
   error: false,
 };
 

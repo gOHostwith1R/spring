@@ -18,7 +18,7 @@ class UserController {
         return next(ApiError.userExists('User such exists'));
       }
       if (password !== repeatPassword) {
-        return next(ApiError.passwordsDontMatch(`Passwords don't match`));
+        return next(ApiError.unauthorizedError(`Passwords don't match`));
       }
       const hashPassword = await bcrypt.hash(password, 5);
       const user = await User.create({
@@ -61,12 +61,18 @@ class UserController {
         maxAge: 30 * 24 * 60 * 60 * 1000,
         httpOnly: true,
       });
-      return res.json({ ...tokens, userName: user.dataValues.userName });
+      return res.json({ ...tokens, userName: user.userName });
     } catch (e) {
       next(e);
     }
   }
-  async check(req, res) {}
+  async refresh(req, res, next) {
+    try {
+      console.log(req.cookie);
+    } catch (e) {
+      next(e);
+    }
+  }
 }
 
 module.exports = new UserController();

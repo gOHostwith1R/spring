@@ -4,7 +4,7 @@ const sequelize = require('./db');
 const cookieParser = require('cookie-parser')
 const cors = require('cors');
 const router = require('./routes/index');
-const errorHandler = require('./middleware/ErrorHandlingMiddleware');
+const errorHandler = require('./middleware/errorHandlingMiddleware');
 
 const PORT = process.env.PORT || 5000;
 

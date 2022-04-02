@@ -13,6 +13,13 @@ class TokenService {
       refreshToken,
     };
   }
+  validateAccessToken(token) {
+    try {
+      return jwt.verify(token, process.env.SECRET_KEY_ACCESS);
+    } catch (e) {
+      return null;
+    }
+  }
 }
 
 module.exports = new TokenService()

@@ -17,6 +17,6 @@ router.post(
   body('lastName').isLength({ min: 4 }),
   userController.registration,
 );
-router.get('/auth', userController.check);
+router.get('/refresh', userController.refresh);
 
 module.exports = router;
