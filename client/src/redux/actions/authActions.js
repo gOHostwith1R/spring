@@ -3,8 +3,8 @@ import { setLocalItem } from '../../helpers';
 
 const TYPE_LOGIN = 'LOGIN';
 const TYPE_REGISTER = 'REGISTER';
-const SET_ERROR = 'SET_ERROR';
-const TYPE_REFRESH_TOKEN = 'REFRESH_TOKEN';
+const SET_ERRORS = 'SET_ERRORS';
+const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const typeLogin = ({
   type: TYPE_LOGIN,
@@ -14,12 +14,13 @@ export const typeRegister = ({
   type: TYPE_REGISTER,
 });
 
-export const typeErrorAuth = ({
-  type: SET_ERROR,
+export const clearErrors = ({
+  type: CLEAR_ERRORS,
 });
 
-export const typeRefreshToken = ({
-  type: TYPE_REFRESH_TOKEN,
+export const typeErrorAuth = (payload) => ({
+  type: SET_ERRORS,
+  payload,
 });
 
 export const authLogin = ({ userName, password }) => async (dispatch) => {
@@ -30,6 +31,7 @@ export const authLogin = ({ userName, password }) => async (dispatch) => {
     setLocalItem('refresh', refreshToken);
     dispatch(typeLogin);
   } catch (e) {
+    dispatch(clearErrors);
     dispatch(typeErrorAuth);
   }
 };
@@ -51,11 +53,7 @@ export const authRegister = ({
     setLocalItem('refresh', refreshToken);
     dispatch(typeRegister);
   } catch (e) {
-    dispatch(typeErrorAuth);
+    dispatch(clearErrors);
+    dispatch(typeErrorAuth(e.response.data));
   }
-};
-
-export const fetchRefreshToken = async () => {
-  const res = await apiAuth.apiAuthRefreshToken();
-  console.log(res);
 };

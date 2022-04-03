@@ -15,6 +15,7 @@ router.post(
     .matches(/^[A-Za-z0-9]+$/),
   body('fistName').isLength({ min: 4 }),
   body('lastName').isLength({ min: 4 }),
+  body('age').matches(/[1-9]/),
   userController.registration,
 );
 router.post('/refresh', userController.refresh);

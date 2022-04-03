@@ -1,6 +1,6 @@
 const initialState = {
   isAuth: localStorage.getItem('access'),
-  error: false,
+  errors: [],
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -10,8 +10,12 @@ export const authReducer = (state = initialState, action) => {
     case 'REGISTER': {
       return { ...state, isAuth: !initialState.isAuth };
     }
-    case 'SET_ERROR':
-      return { ...state, error: !initialState.error };
+    case 'SET_ERRORS': {
+      return { ...state, errors: [...state.errors, ...action.payload.message] };
+    }
+    case 'CLEAR_ERRORS': {
+      return { ...state, errors: [] };
+    }
     default:
       return state;
   }

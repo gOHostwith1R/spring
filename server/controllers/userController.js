@@ -9,9 +9,8 @@ class UserController {
       const { userName, password, repeatPassword, firstName, lastName, age } =
         req.body;
       const errors = validationResult(req);
-      console.log(errors);
       if (!errors.isEmpty()) {
-        console.log(errors);
+        return next(ApiError.badRequest(errors.errors));
       }
       const candidate = await User.findOne({ where: { userName } });
       if (candidate) {

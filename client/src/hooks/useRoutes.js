@@ -6,7 +6,7 @@ import { RequireAuth, WithoutAuth } from '../hoc';
 import { RegistrationPage } from '../pages/RegistrationPage';
 
 export const useRoutes = () => {
-  const isAuth = useSelector((state) => state.login.isAuth);
+  const isAuth = useSelector((state) => state.user.isAuth);
   return (
     <Routes>
       <Route

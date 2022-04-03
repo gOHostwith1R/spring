@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import { cardsReducer, authReducer } from './reducers';
 
 const rootReducer = combineReducers({
-  login: authReducer,
+  user: authReducer,
   cards: cardsReducer,
 });
 

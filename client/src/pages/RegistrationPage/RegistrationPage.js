@@ -1,7 +1,7 @@
 import React from 'react';
 import './registrationPage.css';
 import { useForm, Controller } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Button, CustomLink, Input, Title,
 } from '../../components';
@@ -11,6 +11,12 @@ import { authRegister } from '../../redux/actions';
 
 export const RegistrationPage = () => {
   const dispatch = useDispatch();
+  const errors = useSelector((state) => state.user.errors)
+    .reduce((obj, item) => {
+      obj[item.param] = item.param;
+      return obj;
+    }, {});
+  console.log(errors);
   const { control, handleSubmit } = useForm();
   const onSubmit = (data) => {
     dispatch(authRegister(data));
