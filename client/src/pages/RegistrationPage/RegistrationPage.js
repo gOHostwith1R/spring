@@ -8,6 +8,7 @@ import {
 import { AuthWrapper } from '../../layouts';
 import { AuthForm } from '../../layouts/AuthForm';
 import { authRegister } from '../../redux/actions';
+import { clearErrors } from '../../redux/actions/authActions';
 
 export const RegistrationPage = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,6 @@ export const RegistrationPage = () => {
       obj[item.param] = item.param;
       return obj;
     }, {});
-  console.log(errors);
   const { control, handleSubmit } = useForm();
   const onSubmit = (data) => {
     dispatch(authRegister(data));
@@ -117,7 +117,7 @@ export const RegistrationPage = () => {
           {errors.age && <Paragraph type="error__auth">Age must be a number, can’t be a zero</Paragraph>}
         </div>
         <Button type="submit">Sign Up</Button>
-        <CustomLink path="/login">Login</CustomLink>
+        <CustomLink path="/login" onClick={() => dispatch(clearErrors)}>Login</CustomLink>
       </AuthForm>
     </AuthWrapper>
   );

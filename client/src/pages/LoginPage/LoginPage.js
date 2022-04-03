@@ -8,12 +8,12 @@ import {
 import { AuthWrapper } from '../../layouts';
 import { AuthForm } from '../../layouts/AuthForm';
 import { authLogin } from '../../redux/actions';
+import { clearErrors } from '../../redux/actions/authActions';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
   const { control, handleSubmit } = useForm();
-  const error = useSelector((state) => state.user.error);
-  console.log(error);
+  const errors = useSelector((state) => state.user.errors);
   const onSubmit = (data) => dispatch(authLogin(data));
 
   return (
@@ -31,21 +31,23 @@ export const LoginPage = () => {
             />
           )}
         />
-        <Controller
-          name="password"
-          control={control}
-          render={({ field: { ref, onChange } }) => (
-            <Input
-              inputRef={ref}
-              onChange={onChange}
-              placeholder="Enter the password"
-              type="password"
-            />
-          )}
-        />
+        <div>
+          <Controller
+            name="password"
+            control={control}
+            render={({ field: { ref, onChange } }) => (
+              <Input
+                inputRef={ref}
+                onChange={onChange}
+                placeholder="Enter the password"
+                type="password"
+              />
+            )}
+          />
+          {errors && <Paragraph type="error__auth">{errors}</Paragraph> }
+        </div>
         <Button type="submit" classType="button__login">Login</Button>
-        <CustomLink path="/signup">Sign Up</CustomLink>
-        {error && <Paragraph type="error">Incorrect data</Paragraph> }
+        <CustomLink path="/signup" onClick={() => dispatch(clearErrors)}>Sign Up</CustomLink>
       </AuthForm>
     </AuthWrapper>
   );

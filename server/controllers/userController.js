@@ -41,6 +41,9 @@ class UserController {
   async login(req, res, next) {
     try {
       const { userName, password } = req.body;
+      if(!userName && !password ) {
+        return next(ApiError.badRequest('Fields are empty'));
+      }
       const user = await User.findOne({ where: { userName } });
       if (!user) {
         return next(ApiError.badRequest('User Name or password incorrect'));

@@ -11,6 +11,9 @@ export const authReducer = (state = initialState, action) => {
       return { ...state, isAuth: !initialState.isAuth };
     }
     case 'SET_ERRORS': {
+      if (typeof action.payload.message === 'string') {
+        return { ...state, errors: [...state.errors, action.payload.message] };
+      }
       return { ...state, errors: [...state.errors, ...action.payload.message] };
     }
     case 'CLEAR_ERRORS': {
