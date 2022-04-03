@@ -12,9 +12,16 @@
     line-height: 1.5;
 }
 
-.error {
+.error,
+.error__auth
+{
     color: red;
     font-size: 14px;
+}
+
+.error__auth {
+    position: absolute;
+    font-size: 12px;
 }
 
 @media (max-width: 800px) {

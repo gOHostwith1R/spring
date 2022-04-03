@@ -32,7 +32,7 @@ export const authLogin = ({ userName, password }) => async (dispatch) => {
     dispatch(typeLogin);
   } catch (e) {
     dispatch(clearErrors);
-    dispatch(typeErrorAuth);
+    dispatch(typeErrorAuth(e.response.data));
   }
 };
 

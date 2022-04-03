@@ -9,13 +9,20 @@ router.post(
   body('userName').isLength({ min: 3 }),
   body('password')
     .isLength({ min: 4 })
-    .matches(/^[A-Za-z0-9]+$/),
-  body('repeatPassword')
+    .matches(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/),
+  body('repeatPassword', )
     .isLength({ min: 4 })
-    .matches(/^[A-Za-z0-9]+$/),
-  body('fistName').isLength({ min: 4 }),
+    .matches(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/)
+    .custom((value,{req}) => {
+      if (value !== req.body.password) {
+        throw new Error("passwordsNoMatch");
+      } else {
+        return value;
+      }
+    }),
+  body('firstName').isLength({ min: 4 }),
   body('lastName').isLength({ min: 4 }),
-  body('age').matches(/[1-9]/),
+  body('age').matches(/^[1-9][0-9]*$/),
   userController.registration,
 );
 router.post('/refresh', userController.refresh);

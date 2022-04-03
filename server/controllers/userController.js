@@ -6,7 +6,7 @@ const TokenService = require('../service/TokenService');
 class UserController {
   async registration(req, res, next) {
     try {
-      const { userName, password, repeatPassword, firstName, lastName, age } =
+      const { userName, password, firstName, lastName, age } =
         req.body;
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -15,9 +15,6 @@ class UserController {
       const candidate = await User.findOne({ where: { userName } });
       if (candidate) {
         return next(ApiError.userExists('User such exists'));
-      }
-      if (password !== repeatPassword) {
-        return next(ApiError.unauthorizedError(`Passwords don't match`));
       }
       const hashPassword = await bcrypt.hash(password, 5);
       const user = await User.create({

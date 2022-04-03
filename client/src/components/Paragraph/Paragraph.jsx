@@ -7,6 +7,7 @@ export const Paragraph = ({ children, type }) => (
     main__description: type === 'description',
     card__description: type === 'card__description',
     error: type === 'error',
+    error__auth: type === 'error__auth',
   })}
   >
     {children}

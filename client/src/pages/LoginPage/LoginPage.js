@@ -12,8 +12,8 @@ import { authLogin } from '../../redux/actions';
 export const LoginPage = () => {
   const dispatch = useDispatch();
   const { control, handleSubmit } = useForm();
-  const error = useSelector((state) => state.login.error);
-
+  const error = useSelector((state) => state.user.error);
+  console.log(error);
   const onSubmit = (data) => dispatch(authLogin(data));
 
   return (
