@@ -3,10 +3,10 @@ const jwt = require('jsonwebtoken');
 class TokenService {
   generateToken(payload) {
     const accessToken = jwt.sign(payload, process.env.SECRET_KEY_ACCESS, {
-      expiresIn: '1m',
+      expiresIn: '15s',
     });
     const refreshToken = jwt.sign(payload, process.env.SECRET_KEY_REFRESH, {
-      expiresIn: '30d',
+      expiresIn: '30s',
     });
     return {
       accessToken,
@@ -28,6 +28,13 @@ class TokenService {
       return null;
     }
   }
+  decodeRefreshToken(token) {
+    try {
+      return jwt.decode(token, process.env.SECRET_KEY_REFRESH);
+    } catch (e) {
+      return null;
+    }
+  }
 }
 
-module.exports = new TokenService()
+module.exports = new TokenService();

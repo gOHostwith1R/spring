@@ -1,8 +1,8 @@
 const { User } = require('../models/models');
 const bcrypt = require('bcrypt');
-const tokenService = require('../service/TokenService');
 const ApiError = require('../error/ApiError');
 const { validationResult } = require('express-validator');
+const TokenService = require('../service/TokenService');
 class UserController {
   async registration(req, res, next) {
     try {
@@ -29,7 +29,7 @@ class UserController {
         age,
       });
 
-      const tokens = tokenService.generateToken({
+      const tokens = TokenService.generateToken({
         userName: user.userName,
         firstName: user.firstName,
       });
@@ -53,7 +53,7 @@ class UserController {
       if (!isCorrectPassword) {
         return next(ApiError.badRequest('User Name or password incorrect'));
       }
-      const tokens = tokenService.generateToken({
+      const tokens = TokenService.generateToken({
         userName: user.userName,
         firstName: user.firstName,
       });
@@ -68,7 +68,25 @@ class UserController {
   }
   async refresh(req, res, next) {
     try {
-      console.log(req.cookie);
+      const { refreshToken } = req.body;
+      if (!refreshToken) {
+        return next(ApiError.unauthorizedError('Unauthorized'));
+      }
+      const checkRefreshToken = TokenService.validateRefreshToken(refreshToken);
+      if(!checkRefreshToken) {
+        return next(ApiError.unauthorizedError('Unauthorized'));
+      }
+      const userData = TokenService.decodeRefreshToken(refreshToken);
+      const tokens = TokenService.generateToken({
+        userName: userData.userName,
+        firstName: userData.firstName,
+      });
+
+      res.cookie('refreshToken', tokens.refreshToken, {
+        maxAge: 30 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+      });
+      return res.json({ ...tokens, userName: userData.userName });
     } catch (e) {
       next(e);
     }
