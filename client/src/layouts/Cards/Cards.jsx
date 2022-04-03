@@ -18,7 +18,7 @@ export const Cards = ({ term }) => {
       {loading ? <Loader /> : filterCards.map((elem) => (
         <Card
           key={elem.id}
-          image={elem.avatar}
+          image={`http://localhost:5000/${elem.avatar}`}
           alt={elem.altCard}
           title={elem.title}
           subtitle={elem.subtitle}
