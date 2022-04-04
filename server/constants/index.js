@@ -1,1 +1,0 @@
-export { cardsData } from './constCards';

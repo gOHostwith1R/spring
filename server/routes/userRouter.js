@@ -25,6 +25,6 @@ router.post(
   body('age').matches(/^[1-9][0-9]*$/),
   userController.registration,
 );
-router.post('/refresh', userController.refresh);
+router.get('/refresh', userController.refresh);
 
 module.exports = router;

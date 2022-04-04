@@ -67,7 +67,7 @@ class UserController {
   }
   async refresh(req, res, next) {
     try {
-      const { refreshToken } = req.body;
+      const { refreshToken } = req.cookies;
       if (!refreshToken) {
         return next(ApiError.unauthorizedError('Unauthorized'));
       }

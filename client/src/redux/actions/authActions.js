@@ -26,9 +26,8 @@ export const typeErrorAuth = (payload) => ({
 export const authLogin = ({ userName, password }) => async (dispatch) => {
   try {
     const res = await apiAuth.apiAuthLogin(userName, password);
-    const { accessToken, refreshToken } = res.data;
+    const { accessToken } = res.data;
     setLocalItem('access', accessToken);
-    setLocalItem('refresh', refreshToken);
     dispatch(typeLogin);
   } catch (e) {
     dispatch(clearErrors);
@@ -48,9 +47,8 @@ export const authRegister = ({
       lastName,
       age,
     );
-    const { accessToken, refreshToken } = res.data;
+    const { accessToken } = res.data;
     setLocalItem('access', accessToken);
-    setLocalItem('refresh', refreshToken);
     dispatch(typeRegister);
   } catch (e) {
     dispatch(clearErrors);

@@ -21,7 +21,6 @@ api.interceptors.response.use((config) => config, (async (error) => {
     try {
       const res = await apiAuth.apiAuthRefreshToken();
       setLocalItem('access', res.data.accessToken);
-      setLocalItem('refresh', res.data.refreshToken);
       return api.request(originalRequest);
     } catch (e) {
       localStorage.clear();
